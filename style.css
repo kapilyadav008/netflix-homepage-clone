@@ -1,0 +1,521 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@600&family=Poppins:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+}
+
+header {
+    height: 99vh;
+    background-image: url("assets/bg.jpg");
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+
+}
+
+.box {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.75;
+    position: absolute;
+    top: 0;
+}
+
+nav {
+    height: 88px;
+    max-width: 80vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Language button */
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid #666;
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.lang-btn select {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    appearance: none;
+    /* remove default dropdown */
+    cursor: pointer;
+}
+
+/* Icons inside lang-btn */
+.lang-btn i {
+    font-size: 14px;
+    pointer-events: none;
+}
+
+/* Sign in button */
+.sign-in {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 7px 18px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.hero {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    height: calc(100% - 200px);
+    gap: 23px;
+}
+
+.hero> :nth-child(1) {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 55px;
+    text-align: center;
+    max-width: 600px;
+    /* text will wrap automatically */
+    line-height: 1.2;
+
+}
+
+.hero> :nth-child(2) {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.hero> :nth-child(3),
+.section3 span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+}
+
+.hero-buttons input {
+    padding: 7px 204px 8px 14px;
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+    background-color: rgba(23, 23, 23, 0.7);
+    border: 1px solid rgba(246, 238, 238, 0.5);
+    height: 2.34rem;
+}
+
+.btn-red {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 7px 31px;
+    border-radius: 4px;
+    font-size: 24px;
+    cursor: pointer;
+    font-weight: bold;
+    height: 3.4rem;
+}
+
+.curvecontainer {
+    height: 100px;
+}
+
+.netflix-curve {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0px;
+    /* thinner */
+    background: transparent;
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    border-top: 4px solid #e50914;
+    /* just the red line */
+}
+
+main {
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    padding: 0px 148px;
+    margin: 15px 0px 0px;
+    gap: 50px;
+}
+
+.heading {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    width: 78vw;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 20px;
+}
+
+.trending .content {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.trending .content::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari */
+}
+
+.trending .card {
+    flex: 0 0 20%;
+    /* 5 at a time */
+    scroll-snap-align: start;
+    padding: 0 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* smooth hover */
+}
+
+.trending .card img {
+    width: 80%;
+    /* better for scaling */
+    border-radius: 6px;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.trending .card:hover img {
+    transform: scale(1.1);
+    /* zoom in */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    /* Netflix shadow */
+}
+
+.trending .card:hover {
+    transform: translateY(-10px);
+    /* lift card slightly */
+}
+
+.heading2 {
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    width: 78vw;
+}
+
+.reasons {
+    display: flex;
+
+    gap: 20px;
+}
+
+.reason-card {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(139deg, #0a0a0f, #2a121e 100%, #0f0f1a 100%);
+    border-radius: 16px;
+    padding: 20px;
+    height: 281px;
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    position: relative;
+}
+
+
+.reason-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.reason-card p {
+    font-size: 1rem;
+    color: #b3b3b3;
+}
+
+.reason-card svg {
+    height: 4.5rem;
+    position: absolute;
+    right: 10px;
+    bottom: 18px;
+}
+
+.heading3 {
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    width: 78vw;
+}
+
+.faqs {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+.faq {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95.5%;
+    background-color: #2d2d2d;
+    padding: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.faq h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
+}
+
+.faq:hover {
+    background-color: #414141;
+}
+
+.section3 {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.section3 input {
+    padding: 7px 399px 8px 14px;
+}
+
+footer {
+    /* height: 100vh; */
+    color: #b3b3b3;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 148px 150px;
+    margin: 55px 0px 0px;
+    gap: 50px;
+}
+
+footer .list ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    font-size: 14px;
+    row-gap: 10px;
+}
+
+ul a {
+    color: inherit;
+}
+
+.lang-btn2 {
+    max-width: fit-content;
+}
+
+.webname {
+    font-size: 14px;
+}
+
+.lastline {
+    font-size: 13px;
+}
+
+.lastline a {
+    color: #448ef4;
+}
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    nav {
+        max-width: 90vw;
+    }
+
+    .hero> :nth-child(1) {
+        font-size: 40px;
+        max-width: 500px;
+    }
+
+    .hero> :nth-child(2) {
+        font-size: 18px;
+    }
+
+    .hero-buttons input {
+        padding: 7px 100px 8px 14px;
+        /* smaller input */
+    }
+
+    .btn-red {
+        font-size: 18px;
+        padding: 7px 20px;
+        height: auto;
+    }
+
+    main {
+        padding: 0 50px;
+    }
+
+    .reasons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .reason-card {
+        width: 45%;
+        height: auto;
+    }
+
+    footer {
+        padding: 0 50px 80px;
+    }
+
+    footer .list ul {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 0 20px;
+        gap: 15px;
+    }
+
+    .hero> :nth-child(1) {
+        font-size: 32px;
+        max-width: 100%;
+    }
+
+    .hero> :nth-child(2),
+    .hero> :nth-child(3),
+    .section3 span {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .hero-buttons input {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .btn-red {
+        width: 100%;
+        font-size: 16px;
+        padding: 10px;
+        height: auto;
+    }
+
+    .trending .card {
+        flex: 0 0 40%;
+        /* 2 per row */
+    }
+
+    .reason-card {
+        width: 100%;
+    }
+
+    .faq {
+        width: 80%;
+    }
+
+    footer {
+        padding: 0 20px 50px;
+        gap: 30px;
+    }
+
+    footer .list ul {
+        grid-template-columns: 1fr;
+        font-size: 12px;
+    }
+}
+
+/* Small phones (max-width: 480px) */
+@media (max-width: 480px) {
+    .hero> :nth-child(1) {
+        font-size: 24px;
+    }
+
+    .hero> :nth-child(2) {
+        font-size: 14px;
+    }
+
+    .hero-buttons input {
+        font-size: 12px;
+    }
+
+    .btn-red {
+        font-size: 14px;
+    }
+
+    .trending .card {
+        flex: 0 0 70%;
+        /* 1 at a time */
+    }
+
+    .reason-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .reason-card p {
+        font-size: 0.9rem;
+    }
+
+    .faq h2 {
+        font-size: 1rem;
+    }
+
+    .questions span {
+        font-size: 12px;
+    }
+}
